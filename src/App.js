@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Button, Spin, Pagination } from 'antd'
+import './App.less'
 
-function App() {
+export default function App() {
+  const onShowSizeChange = () => {
+    console.log('onShowSizeChange')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <Button loading type='primary'>Test Button</Button>
 
-export default App;
+      <Spin>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta expedita molestiae omnis perferendis, debitis velit minima illo quis, similique officia quae sapiente aliquid natus magnam, illum aliquam cupiditate cumque! Error!
+      </Spin>
+
+      <Pagination
+      showSizeChanger
+      onShowSizeChange={onShowSizeChange}
+      defaultCurrent={3}
+      total={500}
+    />
+    </div>
+  )
+}
